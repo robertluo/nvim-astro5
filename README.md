@@ -1,34 +1,93 @@
-# AstroNvim Template
+# Practicalli Astro Configuration
 
-**NOTE:** This is for AstroNvim v5+
+A rich and resource efficient configuration for [Neovim 0.11.x](https://neovim.org/) providing common development tooling, including an effective Clojure REPL workflow
 
-A template for getting started with [AstroNvim](https://github.com/AstroNvim/AstroNvim)
+This configuration is built upon [AstroNvim version 5](https://github.com/AstroNvim/AstroNvim), extending the AstroNvim v5 template with valuable plugins, options and key mappings.
+
+[Practicalli Neovim](https://practical.li/neovim/) describes the Clojure REPL workflow, rich Git and GitHub clients and easy management of plugins and tools using this configuration.
+
+> NOTE: updates to Practicalli Neovim will focus on Practicalli nvim-astro5 from April 2025 onward.
 
 ## 🛠️ Installation
 
-#### Make a backup of your current nvim and shared folder
+Recommended tools:
+
+- [Kitty Terminal](https://practical.li/engineering-playbook/command-line/kitty-terminal/)
+- [Neovim and supporting tools](https://practical.li/neovim/install/neovim/)
+- [Clojure CLI](https://practical.li/clojure/install/)
+
+Clone the Practicalli Astro repository (create a fork if customisation desired)
 
 ```shell
-mv ~/.config/nvim ~/.config/nvim.bak
-mv ~/.local/share/nvim ~/.local/share/nvim.bak
-mv ~/.local/state/nvim ~/.local/state/nvim.bak
-mv ~/.cache/nvim ~/.cache/nvim.bak
+git clone git@github.com:practicalli/nvim-astro5 $HOME/.config/nvim
 ```
 
-#### Create a new user repository from this template
-
-Press the "Use this template" button above to create a new repository to store your user configuration.
-
-You can also just clone this repository directly if you do not want to track your user configuration in GitHub.
-
-#### Clone the repository
-
-```shell
-git clone https://github.com/<your_user>/<your_repository> ~/.config/nvim
-```
-
-#### Start Neovim
+Run `nvim` command and wait for all plugins  to automatically install and Treesitter language parsers to compile.
 
 ```shell
 nvim
 ```
+
+### Multiple Neovim configs
+
+Clone to `$HOME/.config/nvim-astron5` and use the `NVIM_APPNAME=astronvim nvim` command to start Neovim with AstroNvim configuration
+
+```shell
+git clone git@github.com:practicalli/astro $HOME/.config/nvim-astro5
+```
+
+Create a shell alias to run the new configuration, e.g. in `.bashrc` or `.zshrc` (or a `~/.config/shell-aliases` file that each shell rc file sources)
+
+```config
+alias astro5="NVIM_APPNAME=nvim-astro5 nvim"
+```
+
+Load the alias into the current shell from the rc file or shell-aliases (or open a new shell), e.g.
+
+```shell
+source ~/.config/shell-aliases
+```
+
+Run `astro5` and allow neovim plugins to automatically install and Treesitter language parsers to compile.
+
+```shell
+astro5
+```
+
+
+## Configuration overview
+
+The configuration is based on the AstroNvim v5 template config.  Changes to existing file have been kept to a minimum, except for `lua/community.lua` which has additional plugins from the AstroNvim Community repository.
+
+`lua/plugins/user-practicalli.lua` contains Practicalli specific configuration (plugins, preferences & key maps).  This also provides an example of how to modify and extend the AstroNvim configuration yourself.
+
+Create your own `lua/plugins/user-yourname.lua` file to:
+
+- override default plugin configuration
+- add new plugins (or create a new file for a plugin to make them easier to be optional) or by customising the `lua/plugins/user.lua` file.
+
+Set environment variable `PRACTICALLI_ASTRO5` to false to skip the Practicalli config without requiring a code change.
+
+[Practicalli Astro5 config design](https://practical.li/neovim/reference/astro5-configuration/) provides a complete breakdown of this configuration.
+
+> NOTE: Lua files in the `lua/plugins` directory are loaded in alphabetical order so plugin overrides should be the last file to load, e.g `lua/plugins/user-*`
+
+
+### LSP Servers
+
+An LSP server implementation is required for each language, allowing the Neovim LSP client to obtain diagnostic information.
+
+Mason is used to automatically install LSP servers, format & lint tools.  [Mason Registry](https://mason-registry.dev/registry/list) maintains a list of the latest release for each tool (automatically updated).
+
+Mason can be configured to use a locally installed Clojure LSP server (using the [instructions for your operating system](https://clojure-lsp.io/installation/)).
+
+[lua/plugins/termux.lua](https://github.com/practicalli/nvim-astro5/blob/main/lua/plugins/termux.lua) shows how to configure mason to use a local Clojure and Lua LSP server (preventing Mason from automatically installing these tools)
+
+
+## Sponsor Practicalli
+
+[![Sponsor Practicalli via GitHub](https://raw.githubusercontent.com/practicalli/graphic-design/live/buttons/practicalli-github-sponsors-button.png)](https://github.com/sponsors/practicalli-johnny/)
+
+All sponsorship funds are used to support the continued development of [Practicalli series of books and videos](https://practical.li/), although most work is done at personal cost and time. Infrastructure costs are kept to zero.
+
+Thanks to [Cognitect](https://www.cognitect.com/), [Nubank](https://nubank.com.br/) and a wide range of other [sponsors](https://github.com/sponsors/practicalli-johnny#sponsors) for your continued support
