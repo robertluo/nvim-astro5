@@ -7,8 +7,15 @@
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
+
   { import = "astrocommunity.pack.lua" },
-  -- import/override with your plugins folder
+
+  -- ----------------------------------------------
+  -- Test changes in local fork of astrocommunity in ~/project/astrocommunity
+  -- { "AstroNvim/astrocommunity", dev = true },
+  -- Or specify path to Astrocommunity fork
+  -- { dir = "~/projects/community/neovim/astrocommunity" },
+  -- ----------------------------------------------
   -- ----------------------------------------------
   -- Source Control
   -- Neogit interactive git client
