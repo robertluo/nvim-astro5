@@ -16,6 +16,19 @@ return {
   -- Or specify path to Astrocommunity fork
   -- { dir = "~/projects/community/neovim/astrocommunity" },
   -- ----------------------------------------------
+
+  -- ----------------------------------------------
+  -- Packs
+  -- Treesitter: clojure , Lsp: clojure-lsp, Lint/format:
+  { import = "astrocommunity.pack.clojure" },
+  -- Disable plugins contained in the clojure pack
+  -- { "nvim-parinfer", enabled = false },
+  { "nvim-treesitter-sexp", enabled = false },
+  -- { "nvim-treesitter-sexp", enabled = vim.fn.has "nvim-0.11" == 0 },
+  -- Additional plugin:
+  -- { "julienvincent/nvim-paredit" }, -- requires testing
+  -- ----------------------------------------------
+
   -- ----------------------------------------------
   -- Source Control
   -- Neogit interactive git client

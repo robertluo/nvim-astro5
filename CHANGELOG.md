@@ -5,6 +5,7 @@
 - dev: ci workflows including stylua & stale actions
 - dev: git ignore inclusive patterns
 - community: neogit plugin rich git client
+- community: clojure pack & sub-menu descriptions
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
