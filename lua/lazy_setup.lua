@@ -25,7 +25,7 @@ require("lazy").setup({
         "netrwPlugin",
         "tarPlugin",
         "tohtml",
-        "zipPlugin",
+        -- "zipPlugin",  -- enabled to access jar files
       },
     },
   },
