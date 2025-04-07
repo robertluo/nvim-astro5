@@ -1,12 +1,13 @@
 -- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- ------------------------------------------
--- Practicalli specific customisations
+-- Practicalli preferences
 --
 -- Startup dashboard banner
 -- `fd` as alternate `ESC` key mapping (better-escape.nvim)
--- Everforest colorscheme
--- Custom global options & key mpapings (via astrocore)
+-- catppuccin-mocha colorscheme
+-- Plugins & configuration
+-- Neovim global options & key mpapings
 -- ------------------------------------------
 
 -- INFO: Create a `lua/plugins/your-name.lua` for significant changes
@@ -22,6 +23,25 @@ if practicalli == "false" then return {} end
 return {
 
   -- ------------------------------------------
+  -- UI Customisation
+  -- Vertical which-key menu
+  {
+    "folke/which-key.nvim",
+    opts = {
+      ---@type false | "classic" | "modern" | "helix"
+      preset = "helix",
+    },
+  },
+  -- Colorscheme (Theme)
+  ---@type LazySpec
+  {
+    "AstroNvim/astroui",
+    ---@type AstroUIOpts
+    opts = {
+      -- change colorscheme
+      colorscheme = "catppuccin-mocha",
+    },
+  },
   -- Startup Dashboard
   {
     "folke/snacks.nvim",

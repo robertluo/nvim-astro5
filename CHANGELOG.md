@@ -9,6 +9,7 @@
 - practicalli: personal preferences with conditional skip
 - practicalli: startup dashboard logo
 - community: proffered plugins from astrocommunity
+- colorscheme: load and set catppuccin as theme
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
