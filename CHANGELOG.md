@@ -7,6 +7,7 @@
 - community: neogit plugin rich git client
 - community: clojure pack & sub-menu descriptions
 - practicalli: personal preferences with conditional skip
+- practicalli: startup dashboard logo
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
