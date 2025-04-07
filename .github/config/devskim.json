@@ -1,5 +1,5 @@
 {
   "Globs": [
-    "**.github/**"
+    ".github/**"
   ]
 }
