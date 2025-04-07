@@ -62,9 +62,35 @@ return {
     },
   },
   -- ------------------------------------------
+
   -- ------------------------------------------
   -- Editor tools
 
+  -- Alternative to Esc key using `fd` key mapping
+  {
+    "max397574/better-escape.nvim",
+    event = "InsertCharPre",
+    opts = {
+      timeout = vim.o.timeoutlen,
+      default_mappings = true,
+      mappings = {
+        i = { f = { d = "<Esc>" } },
+        c = { f = { d = "<Esc>" } },
+        t = { f = { d = "<Esc>" } },
+        v = { f = { d = "<Esc>" } },
+        s = { f = { d = "<Esc>" } },
+      },
+    },
+  },
+  -- Trim trailing blank space and blank lines
+  {
+    "cappyzawa/trim.nvim",
+    opts = {
+      -- ft_blocklist = {"markdown"}, -- filetype not to trim
+      -- highlight = true,
+      -- highlight_bg = "purple",
+    },
+  },
   -- Custom snippets (vscode format)
   {
     "L3MON4D3/LuaSnip",
@@ -79,4 +105,124 @@ return {
   },
   -- ------------------------------------------
 
+  -- ------------------------------------------
+  -- LSP Customisation
+
+  -- Enable Snacks Picker LSP Mappings
+  {
+    "AstroNvim/astrolsp",
+    ---@param opts AstroLSPOpts
+    opts = function(_, opts)
+      if opts.mappings.n.gd then opts.mappings.n.gd[1] = function() require("snacks.picker").lsp_definitions() end end
+      if opts.mappings.n.gI then
+        opts.mappings.n.gI[1] = function() require("snacks.picker").lsp_implementations() end
+      end
+      if opts.mappings.n.gy then
+        opts.mappings.n.gy[1] = function() require("snacks.picker").lsp_type_definitions() end
+      end
+      if opts.mappings.n["<Leader>lG"] then
+        opts.mappings.n["<Leader>lG"][1] = function() require("snacks.picker").lsp_workspace_symbols() end
+      end
+      if opts.mappings.n["<Leader>lR"] then
+        opts.mappings.n["<Leader>lR"][1] = function() require("snacks.picker").lsp_references() end
+      end
+    end,
+  },
+  -- ------------------------------------------
+
+  -- ------------------------------------------
+  -- Neovim Options and Key Mappings
+  {
+    "AstroNvim/astrocore",
+    ---@type AstroCoreOpts
+    opts = {
+      options = {
+        -- configure general options: vim.opt.<key>
+        opt = {
+          spell = true, -- sets vim.opt.spell
+          wrap = true, -- sets vim.opt.wrap
+          guifont = "Fira Code:h16", -- neovide font family & size
+        },
+        -- configure global vim variables: vim.g
+        g = {
+          -- Neovim language provides - disable language integration not required
+          loaded_node_provider = 0,
+          loaded_perl_provider = 0,
+          loaded_python3_provider = 0,
+          loaded_ruby_provider = 0,
+          loaded_rust_provider = 0,
+
+          -- Leader key for Visual-Multi Cursors (Multiple Cursors)
+          VM_leader = "gm", -- Visual Multi Leader (multiple cursors - user plugin)
+
+          -- Conjure plugin overrides
+          -- comment pattern for eval to comment command
+          ["conjure#eval#comment_prefix"] = ";; ",
+          -- Hightlight evaluated forms
+          ["conjure#highlight#enabled"] = true,
+
+          -- show HUD REPL log at startup
+          ["conjure#log#hud#enabled"] = false,
+
+          -- auto repl (babashka)
+          ["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false,
+          ["conjure#client#clojure#nrepl#connection#auto_repl#hidden"] = true,
+          ["conjure#client#clojure#nrepl#connection#auto_repl#cmd"] = nil,
+          ["conjure#client#clojure#nrepl#eval#auto_require"] = false,
+
+          -- Test runner: "clojure", "clojuresCRipt", "kaocha"
+          ["conjure#client#clojure#nrepl#test#runner"] = "kaocha",
+
+          -- Minimise very long lines slow down:
+          -- `g:conjure#log#treesitter` false (true by default)
+          -- ["conjure#log##treesitter"] = false,
+          -- `g:conjure#log#disable_diagnostics` true (disabled) by default
+        },
+      },
+      mappings = {
+        n = {
+          -- normal mode key bindings
+          -- setting a mapping to false will disable it
+          -- ["<esc>"] = false,
+
+          -- whick-key sub-menu for Visual-Multi Cursors (Multiple Cursors)
+          ["gm"] = { name = "Multiple Cursors" },
+
+          -- Toggle last open buffer
+          ["<Leader><tab>"] = { "<cmd>b#<cr>", desc = "Previous tab" },
+
+          -- snaps file explorer
+          ["<Leader>E"] = { "<cmd>lua Snacks.picker.explorer()<cr>", desc = "Snacks Explorer" },
+
+          -- Save prompting for file name
+          ["<Leader>W"] = { ":write ", desc = "Save as file" },
+
+          -- Show dashboard when last buffer is closed
+          ["<Leader>c"] = {
+            function()
+              local bufs = vim.fn.getbufinfo { buflisted = true }
+              require("astrocore.buffer").close(0)
+              if not bufs[2] then require("snacks").dashboard() end
+            end,
+            desc = "Close buffer",
+          },
+
+          -- Find Menu
+          -- browse via directory structure, create and modify paths
+          -- ["<Leader>fe"] = { "<cmd>Telescope file_browser<cr>", desc = "Explorer" },
+          -- find word for specific file patterns
+          -- ["<Leader>fg"] = {
+          --   "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
+          --   desc = "Grep Word",
+          -- },
+        },
+        t = {
+          -- terminal mode key bindings
+        },
+        v = {
+          -- visual mode key bindings
+        },
+      },
+    },
+  },
 }
