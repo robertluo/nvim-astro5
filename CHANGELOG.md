@@ -10,6 +10,7 @@
 - practicalli: startup dashboard logo
 - community: proffered plugins from astrocommunity
 - colorscheme: load and set catppuccin as theme
+- snippets: include vscode snippets from practicalli astro
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
