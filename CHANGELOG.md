@@ -12,6 +12,7 @@
 - colorscheme: load and set catppuccin as theme
 - snippets: include vscode snippets from practicalli astro
 - practicalli: neovim & plugin preferences, custom key maps
+- termux: use locally installed lsp servers
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
