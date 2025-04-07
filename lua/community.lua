@@ -18,20 +18,56 @@ return {
   -- ----------------------------------------------
 
   -- ----------------------------------------------
+  -- Colorscheme (Themes)
+  { import = "astrocommunity.colorscheme.catppuccin" },
+  -- ----------------------------------------------
+
+  -- ----------------------------------------------
+  -- Editing Support
+  -- Multiple Cursors
+  -- `gm` VM_Leader set in 'lua/plugins/user-practicalli.lua'
+  { import = "astrocommunity.editing-support.vim-visual-multi" },
+
+  -- ----------------------------------------------
+  -- Motion plugins
+  { import = "astrocommunity.motion.nvim-surround" },
+  -- ----------------------------------------------
+
+  -- ----------------------------------------------
   -- Packs
   -- Treesitter: clojure , Lsp: clojure-lsp, Lint/format:
   { import = "astrocommunity.pack.clojure" },
   -- Disable plugins contained in the clojure pack
-  -- { "nvim-parinfer", enabled = false },
   { "nvim-treesitter-sexp", enabled = false },
   -- { "nvim-treesitter-sexp", enabled = vim.fn.has "nvim-0.11" == 0 },
-  -- Additional plugin:
-  -- { "julienvincent/nvim-paredit" }, -- requires testing
+  -- Alternative parinfer plugin:
+  -- { "julienvincent/nvim-paredit" }, -- requires testing, feedback welcome
+
+  { import = "astrocommunity.pack.json" },
   -- ----------------------------------------------
 
   -- ----------------------------------------------
   -- Source Control
+
   -- Neogit interactive git client
   { import = "astrocommunity.git.neogit" },
+
+  -- Diffview with neogit integration
+  { import = "astrocommunity.git.diffview-nvim" },
+
+  -- Manage GitHub Gists
+  { import = "astrocommunity.git.gist-nvim" },
+
+  -- Open in GitHub / GitLab websites
+  { import = "astrocommunity.git.gitlinker-nvim" },
+
+  -- GitHub Pull Requests and Issues
+  { import = "astrocommunity.git.octo-nvim" },
+  -- ----------------------------------------------
+
+  -- ----------------------------------------------
+  -- Utility
+  -- rich command prompt
+  { import = "astrocommunity.utility.noice-nvim" },
   -- ----------------------------------------------
 }
