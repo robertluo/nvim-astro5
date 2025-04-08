@@ -33,7 +33,7 @@ nvim
 Clone to `$HOME/.config/nvim-astron5` and use the `NVIM_APPNAME=astronvim nvim` command to start Neovim with AstroNvim configuration
 
 ```shell
-git clone git@github.com:practicalli/astro $HOME/.config/nvim-astro5
+git clone git@github.com:practicalli/nvim-astro5 $HOME/.config/nvim-astro5
 ```
 
 Create a shell alias to run the new configuration, e.g. in `.bashrc` or `.zshrc` (or a `~/.config/shell-aliases` file that each shell rc file sources)
