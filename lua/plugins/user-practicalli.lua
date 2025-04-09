@@ -103,6 +103,28 @@ return {
       }
     end,
   },
+  -- Jump between Clojure src and test files
+  {
+    "rgroli/other.nvim",
+    main = "other-nvim",
+    opts = {
+      mappings = {
+        {
+          context = "test",
+          pattern = function(path)
+            local match = vim.fn.matchlist(path, "\\v^(.*)/src/(.{-}_test)@!(.{-}).clj(.?)")
+            if #match > 0 then return match end
+          end,
+          target = "%2/test/%4_test.clj%5",
+        },
+        {
+          context = "implementation",
+          pattern = "(.*)/test/(.*)_test.clj(.?)$",
+          target = "%1/src/%2.clj%3",
+        },
+      },
+    },
+  },
   -- ------------------------------------------
 
   -- ------------------------------------------
@@ -207,6 +229,8 @@ return {
             desc = "Close buffer",
           },
 
+          -- Toggle between src and test
+          ["<localLeader>ts"] = { "<cmd>Other<cr>", desc = "Switch between src and test" },
           -- Find Menu
           -- browse via directory structure, create and modify paths
           -- ["<Leader>fe"] = { "<cmd>Telescope file_browser<cr>", desc = "Explorer" },

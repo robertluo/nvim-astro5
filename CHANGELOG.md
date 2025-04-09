@@ -14,6 +14,7 @@
 - practicalli: neovim & plugin preferences, custom key maps
 - termux: use locally installed lsp servers
 - snippets: comment header & section snippets for lua
+- practicalli: toggle between Clojure src and test files
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
