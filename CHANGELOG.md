@@ -13,6 +13,7 @@
 - snippets: include vscode snippets from practicalli astro
 - practicalli: neovim & plugin preferences, custom key maps
 - termux: use locally installed lsp servers
+- snippets: comment header & section snippets for lua
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
