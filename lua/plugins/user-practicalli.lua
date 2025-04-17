@@ -42,6 +42,19 @@ return {
       colorscheme = "catppuccin-mocha",
     },
   },
+  {
+    "nvzone/showkeys",
+    lazy = false,
+    cmd = "ShowkeysToggle",
+    opts = {
+      excluded_modes = { "i", "t" }, -- skip insert and terminal
+      position = "bottom-center",
+      show_count = true,
+      maxkeys = 4,
+      timeout = 4,
+    },
+  },
+
   -- Startup Dashboard
   {
     "folke/snacks.nvim",
@@ -216,6 +229,9 @@ return {
           --   "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
           --   desc = "Grep Word",
           -- },
+
+          -- Showkeys plugin (visualise key presses in Neovim window)
+          ["<Leader>uk"] = { "<cmd>ShowkeysToggle<cr>", desc = "Toggle Showkeys" },
         },
         t = {
           -- terminal mode key bindings
