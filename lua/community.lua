@@ -47,6 +47,12 @@ return {
   -- ----------------------------------------------
 
   -- ----------------------------------------------
+  -- Recipes
+  -- LSP Mappings for Snacks or Telescope
+  { import = "astrocommunity.recipes.picker-lsp-mappings" },
+  -- ----------------------------------------------
+
+  -- ----------------------------------------------
   -- Source Control
 
   -- Neogit interactive git client
