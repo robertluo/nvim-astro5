@@ -16,6 +16,7 @@
 - snippets: comment header & section snippets for lua
 - practicalli: toggle between Clojure src and test files
 - practicalli: showkeys visualise key presses in neovim
+- community: neovide GUI recipe from Astrocommunity
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files

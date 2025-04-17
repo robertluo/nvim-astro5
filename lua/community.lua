@@ -50,6 +50,8 @@ return {
   -- Recipes
   -- LSP Mappings for Snacks or Telescope
   { import = "astrocommunity.recipes.picker-lsp-mappings" },
+  -- Neovide GUI configuration
+  { import = "astrocommunity.recipes.neovide" },
   -- ----------------------------------------------
 
   -- ----------------------------------------------
