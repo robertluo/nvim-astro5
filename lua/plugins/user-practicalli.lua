@@ -54,8 +54,7 @@ return {
       timeout = 4,
     },
   },
-
-  -- Startup Dashboard
+  -- Snacks Customisation
   {
     "folke/snacks.nvim",
     opts = {
@@ -72,6 +71,8 @@ return {
           }, "\n"),
         },
       },
+      -- indent guides - disable by default
+      indent = { enabled = false },
     },
   },
   -- ------------------------------------------

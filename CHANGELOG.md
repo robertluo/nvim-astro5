@@ -21,3 +21,4 @@
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
 - community: picker-lsp-mappings recipe replaces custom code
+- practicalli: disable snacks indent guides by default
