@@ -25,3 +25,4 @@
 - community: remove gitlinker-nvim (replaced by snack gitbrowse)
 - practicalli: configure showkeys for lazy loading
 - practicalli: configure trim for lazy loading
+- practicalli: configure other for lazy loading

@@ -121,6 +121,7 @@ return {
   -- Jump between Clojure src and test files
   {
     "rgroli/other.nvim",
+    cmd = "Other",
     main = "other-nvim",
     opts = {
       mappings = {
