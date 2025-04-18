@@ -23,3 +23,4 @@
 - community: picker-lsp-mappings recipe replaces custom code
 - practicalli: disable snacks indent guides by default
 - community: remove gitlinker-nvim (replaced by snack gitbrowse)
+- practicalli: configure showkeys for lazy loading

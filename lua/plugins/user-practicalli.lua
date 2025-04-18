@@ -42,9 +42,9 @@ return {
       colorscheme = "catppuccin-mocha",
     },
   },
+  -- show key presses in normal mode
   {
     "nvzone/showkeys",
-    lazy = false,
     cmd = "ShowkeysToggle",
     opts = {
       excluded_modes = { "i", "t" }, -- skip insert and terminal
