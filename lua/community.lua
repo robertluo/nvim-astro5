@@ -66,9 +66,6 @@ return {
   -- Manage GitHub Gists
   { import = "astrocommunity.git.gist-nvim" },
 
-  -- Open in GitHub / GitLab websites
-  { import = "astrocommunity.git.gitlinker-nvim" },
-
   -- GitHub Pull Requests and Issues
   { import = "astrocommunity.git.octo-nvim" },
   -- ----------------------------------------------
