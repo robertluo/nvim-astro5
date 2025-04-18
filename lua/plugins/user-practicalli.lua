@@ -99,6 +99,7 @@ return {
   -- Trim trailing blank space and blank lines
   {
     "cappyzawa/trim.nvim",
+    event = "User AstroFile",
     opts = {
       -- ft_blocklist = {"markdown"}, -- filetype not to trim
       -- highlight = true,
