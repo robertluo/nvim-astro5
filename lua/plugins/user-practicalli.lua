@@ -222,6 +222,13 @@ return {
             desc = "Close buffer",
           },
 
+          -- Gist Creation
+          ["<Leader>gj"] = { ":GistCreateFromFile ", desc = "Create Gist (file)" },
+          ["<Leader>gJ"] = { "<cmd>GistsList<cr>", desc = "List Gist" },
+
+          -- Neogit Status float
+          ["<Leader>gf"] = { "<cmd>Neogit kind=floating<cr>", desc = "Git Status (floating)" },
+
           -- Toggle between src and test
           ["<localLeader>ts"] = { "<cmd>Other<cr>", desc = "Switch between src and test" },
           -- Find Menu
@@ -241,6 +248,8 @@ return {
         },
         v = {
           -- visual mode key bindings
+          -- Gist Creation
+          ["<Leader>gj"] = { ":GistCreate ", desc = "Create Gist (region)" },
         },
       },
     },

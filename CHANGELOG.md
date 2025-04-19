@@ -18,6 +18,7 @@
 - practicalli: showkeys visualise key presses in neovim
 - community: neovide GUI recipe from Astrocommunity
 - snippets: neovim api examples in lua from folke/dots
+- practicalli: git related key mappings (neogit, gist-nvim)
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
