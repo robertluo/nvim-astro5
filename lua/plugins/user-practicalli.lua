@@ -79,6 +79,9 @@ return {
 
       -- indent guides - disable by default
       indent = { enabled = false },
+
+      -- log level: TRACE DEBUG ERROR WARN INFO  OFF
+      notifier = { level = vim.log.levels.WARN },
     },
   },
   -- ------------------------------------------
