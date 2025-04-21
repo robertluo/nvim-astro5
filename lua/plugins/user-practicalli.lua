@@ -1,29 +1,35 @@
--- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
 -- ------------------------------------------
 -- Practicalli preferences
 --
--- Startup dashboard banner
--- `fd` as alternate `ESC` key mapping (better-escape.nvim)
+-- which-key menu vertical orientation
 -- catppuccin-mocha colorscheme
--- Plugins & configuration
--- Neovim global options & key mpapings
+-- Show key presses in popup (SPC u k)
+-- Snacks customisation
+-- -- Startup dashboard banner
+-- -- indent guides disabled
+-- -- notifier log level INFO
+-- `fd` as alternate `ESC` key mapping (better-escape.nvim)
+-- Trim blank space automatically
+-- Custom snippets
+-- Gist public
+-- Neovim global options & key mappings
 -- ------------------------------------------
 
--- INFO: Create a `lua/plugins/your-name.lua` for significant changes
+-- INFO: Create your own preferences in `lua/plugins/your-name.lua`
 
 -- INFO: Files under `lua/plugins/*.lua` load in alphabetical order,
 -- so plugin overrides should be the last file to load
 
--- INFO: Skip this config if `PRACTICALLI_ASTRO` environment variable set to false
-local practicalli = vim.env.PRACTICALLI_ASTRO
-if practicalli == "false" then return {} end
+-- INFO: Config in this file skipped if `PRACTICALLI_ASTRO` environment variable set to false
+local user_practicalli = vim.env.PRACTICALLI_ASTRO
+if user_practicalli == "false" then return {} end
 
 ---@type LazySpec
 return {
 
   -- ------------------------------------------
   -- UI Customisation
+
   -- Vertical which-key menu
   {
     "folke/which-key.nvim",
@@ -38,7 +44,6 @@ return {
     "AstroNvim/astroui",
     ---@type AstroUIOpts
     opts = {
-      -- change colorscheme
       colorscheme = "catppuccin-mocha",
     },
   },
@@ -71,6 +76,7 @@ return {
           }, "\n"),
         },
       },
+
       -- indent guides - disable by default
       indent = { enabled = false },
     },
@@ -100,11 +106,7 @@ return {
   {
     "cappyzawa/trim.nvim",
     event = "User AstroFile",
-    opts = {
-      -- ft_blocklist = {"markdown"}, -- filetype not to trim
-      -- highlight = true,
-      -- highlight_bg = "purple",
-    },
+    opts = {},
   },
   -- Custom snippets (vscode format)
   {
@@ -161,11 +163,8 @@ return {
         -- configure global vim variables: vim.g
         g = {
           -- Neovim language provides - disable language integration not required
-          loaded_node_provider = 0,
           loaded_perl_provider = 0,
-          loaded_python3_provider = 0,
           loaded_ruby_provider = 0,
-          loaded_rust_provider = 0,
 
           -- Leader key for Visual-Multi Cursors (Multiple Cursors)
           VM_leader = "gm", -- Visual Multi Leader (multiple cursors - user plugin)
@@ -206,21 +205,14 @@ return {
           -- Toggle last open buffer
           ["<Leader><tab>"] = { "<cmd>b#<cr>", desc = "Previous tab" },
 
-          -- snaps file explorer
+          -- snacks file explorer
           ["<Leader>E"] = { "<cmd>lua Snacks.picker.explorer()<cr>", desc = "Snacks Explorer" },
+          -- snacks zen mode
+          -- TODO: how to use snacks zen mode with snacks dim
+          -- ["<Leader>z"] = { "<cmd>lua Snacks.zen.zen()<cr>", desc = "Snacks Zen" },
 
           -- Save prompting for file name
           ["<Leader>W"] = { ":write ", desc = "Save as file" },
-
-          -- Show dashboard when last buffer is closed
-          ["<Leader>c"] = {
-            function()
-              local bufs = vim.fn.getbufinfo { buflisted = true }
-              require("astrocore.buffer").close(0)
-              if not bufs[2] then require("snacks").dashboard() end
-            end,
-            desc = "Close buffer",
-          },
 
           -- Gist Creation
           ["<Leader>gj"] = { ":GistCreateFromFile ", desc = "Create Gist (file)" },
@@ -231,14 +223,6 @@ return {
 
           -- Toggle between src and test
           ["<localLeader>ts"] = { "<cmd>Other<cr>", desc = "Switch between src and test" },
-          -- Find Menu
-          -- browse via directory structure, create and modify paths
-          -- ["<Leader>fe"] = { "<cmd>Telescope file_browser<cr>", desc = "Explorer" },
-          -- find word for specific file patterns
-          -- ["<Leader>fg"] = {
-          --   "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>",
-          --   desc = "Grep Word",
-          -- },
 
           -- Showkeys plugin (visualise key presses in Neovim window)
           ["<Leader>uk"] = { "<cmd>ShowkeysToggle<cr>", desc = "Toggle Showkeys" },

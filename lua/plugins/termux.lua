@@ -1,16 +1,13 @@
 -- ------------------------------------------
 -- Termux (Android) Overrides
 --
--- Configure LSP language servers to run locally
--- as mason fails to install these servers
+-- Use local LSP language servers as mason fails to install
 -- Clojure LSP server
 -- Lua Language server
 -- ------------------------------------------
 
 -- ------------------------------------------
--- INFO: conditional only loads config if
--- `OS_TERMUX` is true
---
+-- INFO: conditional loads if `OS_TERMUX` is true
 local termux = vim.env.OS_TERMUX
 if not termux then return {} end
 -- ------------------------------------------
@@ -22,10 +19,10 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     -- INFO: prevent Mason loading Clojure & Lua LSP servers
     -- overrides `require("mason-tool-installer").setup(...)`
+    -- Language server names found in `:Mason`
     opts = {
-      -- Make sure to use the names found in `:Mason`
       ensure_installed = {
-        -- install language servers
+        -- Conditional install of language servers
         "lua-language-server",
         "clojure-lsp",
         condition = function() return not termux end,
@@ -44,7 +41,7 @@ return {
         inlay_hints = false, -- enable/disable inlay hints on start
         semantic_tokens = true, -- enable/disable semantic token highlighting
       },
-      -- enable servers that you already have installed without mason
+      -- Use local servers (not mason installed)
       servers = {
         -- "pyright"
         "clojure-lsp",

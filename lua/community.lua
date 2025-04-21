@@ -4,16 +4,21 @@
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
 -- This guarantees that the specs are processed before any user plugins.
 
+-- NOTE: additional key binding in `lua/plugins/practicalli.lua`
+
 ---@type LazySpec
 return {
-  "AstroNvim/astrocommunity",
-
-  { import = "astrocommunity.pack.lua" },
 
   -- ----------------------------------------------
-  -- Test changes in local fork of astrocommunity in ~/project/astrocommunity
+  -- Astrocommunity - include one of the following
+
+  -- Astrocommunity Git Repository
+  "AstroNvim/astrocommunity",
+
+  -- Local plugin development - Astrocommunity fork in ~/project/astrocommunity
   -- { "AstroNvim/astrocommunity", dev = true },
-  -- Or specify path to Astrocommunity fork
+
+  -- Local plugin development - specify path to Astrocommunity fork
   -- { dir = "~/projects/community/neovim/astrocommunity" },
   -- ----------------------------------------------
 
@@ -24,41 +29,40 @@ return {
 
   -- ----------------------------------------------
   -- Editing Support
+
   -- Multiple Cursors
-  -- `gm` VM_Leader set in 'lua/plugins/user-practicalli.lua'
   { import = "astrocommunity.editing-support.vim-visual-multi" },
+
+  -- switch between associated files, e.g. src & test
+  -- TODO: Astrocommunity PR: #1461
+  -- { import = "astrocommunity.editing-support.other-nvim" },
+  -- ----------------------------------------------
 
   -- ----------------------------------------------
   -- Motion plugins
-  { import = "astrocommunity.motion.nvim-surround" },
+  -- { import = "astrocommunity.motion.nvim-surround" },
   -- ----------------------------------------------
 
   -- ----------------------------------------------
-  -- Packs
-  -- Treesitter: clojure , Lsp: clojure-lsp, Lint/format:
+  -- Packs (code-runner, treesitter, lsp & lint/format support)
+
   { import = "astrocommunity.pack.clojure" },
-  -- Disable plugins contained in the clojure pack
-  { "nvim-treesitter-sexp", enabled = false },
-  -- { "nvim-treesitter-sexp", enabled = vim.fn.has "nvim-0.11" == 0 },
-  -- Alternative parinfer plugin:
-  -- { "julienvincent/nvim-paredit" }, -- requires testing, feedback welcome
-
   { import = "astrocommunity.pack.json" },
+  { import = "astrocommunity.pack.lua" },
   -- ----------------------------------------------
 
   -- ----------------------------------------------
   -- Recipes
-  -- LSP Mappings for Snacks or Telescope
-  { import = "astrocommunity.recipes.picker-lsp-mappings" },
+
   -- Neovide GUI configuration
   { import = "astrocommunity.recipes.neovide" },
+
+  -- LSP Mappings for Snacks or Telescope
+  { import = "astrocommunity.recipes.picker-lsp-mappings" },
   -- ----------------------------------------------
 
   -- ----------------------------------------------
   -- Source Control
-
-  -- Neogit interactive git client
-  { import = "astrocommunity.git.neogit" },
 
   -- Diffview with neogit integration
   { import = "astrocommunity.git.diffview-nvim" },
@@ -66,12 +70,16 @@ return {
   -- Manage GitHub Gists
   { import = "astrocommunity.git.gist-nvim" },
 
+  -- Neogit interactive git client
+  { import = "astrocommunity.git.neogit" },
+
   -- GitHub Pull Requests and Issues
   { import = "astrocommunity.git.octo-nvim" },
   -- ----------------------------------------------
 
   -- ----------------------------------------------
   -- Utility
+
   -- rich command prompt
   { import = "astrocommunity.utility.noice-nvim" },
   -- ----------------------------------------------
