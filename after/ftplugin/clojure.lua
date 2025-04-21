@@ -19,6 +19,8 @@ return {
       { "<LocalLeader>t", group = "Test" },
       { "<LocalLeader>v", group = "Values" },
       { "<LocalLeader>x", group = "macroXpand" },
+      -- Structural Editing
+      { "<localleader>p", "<cmd>ParinferToggle<cr>", desc = "Toggle Parinfer", mode = "n" },
     },
   },
 }

@@ -19,6 +19,7 @@
 - community: neovide GUI recipe from Astrocommunity
 - snippets: neovim api examples in lua from folke/dots
 - practicalli: git related key mappings (neogit, gist-nvim)
+- ftplugin: parinfer toggle key map for clojure
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files
