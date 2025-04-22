@@ -32,10 +32,6 @@ return {
 
   -- Multiple Cursors
   { import = "astrocommunity.editing-support.vim-visual-multi" },
-
-  -- switch between associated files, e.g. src & test
-  -- TODO: Astrocommunity PR: #1461
-  -- { import = "astrocommunity.editing-support.other-nvim" },
   -- ----------------------------------------------
 
   -- ----------------------------------------------

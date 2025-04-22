@@ -33,3 +33,4 @@
 - practicalli: configure other for lazy loading
 - practicalli: disable default_mappings in better-escape (#32)
 - config: remove unused files from astronvim template
+- practicalli: use other-nvim from astrocommunity

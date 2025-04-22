@@ -123,31 +123,6 @@ return {
       }
     end,
   },
-  -- Jump between Clojure src and test files
-  {
-    "rgroli/other.nvim",
-    cmd = "Other",
-    main = "other-nvim",
-    opts = {
-      mappings = {
-        {
-          context = "test",
-          pattern = function(path)
-            local match = vim.fn.matchlist(path, "\\v^(.*)/src/(.{-}_test)@!(.{-}).clj(.?)")
-            if #match > 0 then return match end
-          end,
-          target = "%2/test/%4_test.clj%5",
-        },
-        {
-          context = "implementation",
-          pattern = "(.*)/test/(.*)_test.clj(.?)$",
-          target = "%1/src/%2.clj%3",
-        },
-      },
-    },
-  },
-  {
-  },
   -- ------------------------------------------
 
   -- ------------------------------------------
@@ -225,8 +200,9 @@ return {
           -- Neogit Status float
           ["<Leader>gf"] = { "<cmd>Neogit kind=floating<cr>", desc = "Git Status (floating)" },
 
-          -- Toggle between src and test
-          ["<localLeader>ts"] = { "<cmd>Other<cr>", desc = "Switch between src and test" },
+          -- Toggle between src and test (Clojure pack | other-nvim)
+          ["<localLeader>ts"] = { "<cmd>Other<cr>", desc = "Switch src & test" },
+          ["<localLeader>tS"] = { "<cmd>OtherSplit<cr>", desc = "Switch src & test (Split)" },
 
           -- Showkeys plugin (visualise key presses in Neovim window)
           ["<Leader>uk"] = { "<cmd>ShowkeysToggle<cr>", desc = "Toggle Showkeys" },
