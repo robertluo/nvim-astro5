@@ -21,6 +21,7 @@
 - practicalli: git related key mappings (neogit, gist-nvim)
 - ftplugin: parinfer toggle key map for clojure
 - practicalli: notifier log level WARN
+- practicalli: buffer tab navigation key mappings
 
 ## Changed
 - lazy: enable zipPlugin to view src inside jar files

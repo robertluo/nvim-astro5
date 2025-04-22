@@ -208,6 +208,10 @@ return {
           -- Toggle last open buffer
           ["<Leader><tab>"] = { "<cmd>b#<cr>", desc = "Previous tab" },
 
+          -- navigate buffer tabs
+          ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
+          ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+
           -- snacks file explorer
           ["<Leader>E"] = { "<cmd>lua Snacks.picker.explorer()<cr>", desc = "Snacks Explorer" },
           -- snacks zen mode
