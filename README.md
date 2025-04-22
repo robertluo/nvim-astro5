@@ -1,12 +1,32 @@
-# Practicalli Astro Configuration
+# Practicalli Astro5 Neovim Configuration
 
-A rich and resource efficient configuration for [Neovim 0.11.x](https://neovim.org/) providing common development tooling, including an effective Clojure REPL workflow
+```none
+██████╗ ██████╗  █████╗  ██████╗████████╗██╗ ██████╗ █████╗ ██╗     ██╗     ██╗
+██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║██╔════╝██╔══██╗██║     ██║     ██║
+██████╔╝██████╔╝███████║██║        ██║   ██║██║     ███████║██║     ██║     ██║
+██╔═══╝ ██╔══██╗██╔══██║██║        ██║   ██║██║     ██╔══██║██║     ██║     ██║
+██║     ██║  ██║██║  ██║╚██████╗   ██║   ██║╚██████╗██║  ██║███████╗███████╗██║
+╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝
+
+ █████╗ ███████╗████████╗██████╗  ██████╗     ███████╗
+██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗    ██╔════╝
+███████║███████╗   ██║   ██████╔╝██║   ██║    ███████╗
+██╔══██║╚════██║   ██║   ██╔══██╗██║   ██║    ╚════██║
+██║  ██║███████║   ██║   ██║  ██║╚██████╔╝    ███████║
+╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝     ╚══════╝
+```
+
+> NOTE: Ascii Art Generator: https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Astro%205
+
+
+## Overview
+
+A lazy loading rich feature configuration for [Neovim 0.11.x](https://neovim.org/), providing common development tooling, including an effective Clojure REPL workflow.
 
 This configuration is built upon [AstroNvim version 5](https://github.com/AstroNvim/AstroNvim), extending the AstroNvim v5 template with valuable plugins, options and key mappings.
 
 [Practicalli Neovim](https://practical.li/neovim/) describes the Clojure REPL workflow, rich Git and GitHub clients and easy management of plugins and tools using this configuration.
 
-> NOTE: updates to Practicalli Neovim will focus on Practicalli nvim-astro5 from April 2025 onward.
 
 ## 🛠️ Installation
 
@@ -16,7 +36,7 @@ Recommended tools:
 - [Neovim and supporting tools](https://practical.li/neovim/install/neovim/)
 - [Clojure CLI](https://practical.li/clojure/install/)
 
-Clone the Practicalli Astro repository (create a fork if customisation desired)
+Clone the Practicalli Astro5 repository (create a fork if customisation desired)
 
 ```shell
 git clone git@github.com:practicalli/nvim-astro5 $HOME/.config/nvim
@@ -59,14 +79,15 @@ astro5
 
 The configuration is based on the AstroNvim v5 template config.  Changes to existing file have been kept to a minimum, except for `lua/community.lua` which has additional plugins from the AstroNvim Community repository.
 
-`lua/plugins/user-practicalli.lua` contains Practicalli specific configuration (plugins, preferences & key maps).  This also provides an example of how to modify and extend the AstroNvim configuration yourself.
+`lua/plugins/practicalli.lua` contains Practicalli specific configuration (plugins, preferences & key maps).  This also provides an example of how to modify and extend the AstroNvim configuration yourself.
+
+Set environment variable `PRACTICALLI_ASTRO` to false to skip the Practicalli config without requiring a code change.
 
 Create your own `lua/plugins/user-yourname.lua` file to:
 
 - override default plugin configuration
-- add new plugins (or create a new file for a plugin to make them easier to be optional) or by customising the `lua/plugins/user.lua` file.
+- add new plugins (or create a new file for a plugin to make them easier to be optional)
 
-Set environment variable `PRACTICALLI_ASTRO5` to false to skip the Practicalli config without requiring a code change.
 
 [Practicalli Astro5 config design](https://practical.li/neovim/reference/astro5-configuration/) provides a complete breakdown of this configuration.
 
@@ -75,7 +96,7 @@ Set environment variable `PRACTICALLI_ASTRO5` to false to skip the Practicalli c
 
 ### LSP Servers
 
-An LSP server implementation is required for each language, allowing the Neovim LSP client to obtain diagnostic information.
+Install an LSP server for each programming language used, allowing the Neovim LSP client to obtain diagnostic information.
 
 Mason is used to automatically install LSP servers, format & lint tools.  [Mason Registry](https://mason-registry.dev/registry/list) maintains a list of the latest release for each tool (automatically updated).
 
