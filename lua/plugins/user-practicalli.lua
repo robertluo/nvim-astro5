@@ -214,9 +214,6 @@ return {
 
           -- snacks file explorer
           ["<Leader>E"] = { "<cmd>lua Snacks.picker.explorer()<cr>", desc = "Snacks Explorer" },
-          -- snacks zen mode
-          -- TODO: how to use snacks zen mode with snacks dim
-          -- ["<Leader>z"] = { "<cmd>lua Snacks.zen.zen()<cr>", desc = "Snacks Zen" },
 
           -- Save prompting for file name
           ["<Leader>W"] = { ":write ", desc = "Save as file" },
