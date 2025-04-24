@@ -1,5 +1,7 @@
 # Unreleased
 
+# 2025-04-24
+
 ## Added
 - readme: describe purpose & use of project
 - dev: ci workflows including stylua & stale actions
