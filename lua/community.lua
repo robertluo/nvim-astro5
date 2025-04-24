@@ -32,6 +32,10 @@ return {
 
   -- Multiple Cursors
   { import = "astrocommunity.editing-support.vim-visual-multi" },
+
+  -- Structured editing (paredit & parinfer)
+  -- TODO: remove once Astrocommunity PR #1460 merged (update clojure pack)
+  { import = "astrocommunity.editing-support.parpar-nvim" },
   -- ----------------------------------------------
 
   -- ----------------------------------------------
