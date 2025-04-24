@@ -213,7 +213,7 @@ return {
 
           -- Toggle between src and test (Clojure pack | other-nvim)
           ["<localLeader>ts"] = { "<cmd>Other<cr>", desc = "Switch src & test" },
-          ["<localLeader>tS"] = { "<cmd>OtherSplit<cr>", desc = "Switch src & test (Split)" },
+          ["<localLeader>tS"] = { "<cmd>OtherVSplit<cr>", desc = "Switch src & test (Split)" },
 
           -- Showkeys plugin (visualise key presses in Neovim window)
           ["<Leader>uk"] = { "<cmd>ShowkeysToggle<cr>", desc = "Toggle Showkeys" },

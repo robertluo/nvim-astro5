@@ -37,3 +37,4 @@
 - practicalli: rename user-practicalli.lua to practicalli.lua
 - practicalli: use other.nvim from practicalli fork (until pr merged)
 - practicalli: include parpar.nvim until Astrocommunity Clojure pack updated
+- practicalli: vertical split for other-nvim `,tS` key map
