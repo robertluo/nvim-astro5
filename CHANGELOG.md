@@ -35,3 +35,4 @@
 - config: remove unused files from astronvim template
 - practicalli: use other-nvim from astrocommunity
 - practicalli: rename user-practicalli.lua to practicalli.lua
+- practicalli: use other.nvim from practicalli fork (until pr merged)
