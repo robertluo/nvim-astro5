@@ -4,7 +4,7 @@
 -- We import this file in `lazy_setup.lua` before the `plugins/` folder.
 -- This guarantees that the specs are processed before any user plugins.
 
--- NOTE: additional key binding in `lua/plugins/practicalli.lua`
+-- NOTE: additional key binding defined in `lua/plugins/practicalli.lua`
 
 ---@type LazySpec
 return {
