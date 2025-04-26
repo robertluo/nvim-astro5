@@ -1,5 +1,8 @@
 # Unreleased
 
+## Changed
+- practicalli: revert to upstream other.nvim
+
 # 2025-04-24
 
 ## Added

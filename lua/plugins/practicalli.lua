@@ -126,8 +126,7 @@ return {
   -- Switch between src and test file
   -- TODO: PR #67 raised on rgroli/other.nvim
   {
-    "practicalli-johnny/other-nvim-fork",
-    branch = "clojure",
+    "rgroli/other.nvim",
     ft = { "clojure" },
     main = "other-nvim",
     opts = {
