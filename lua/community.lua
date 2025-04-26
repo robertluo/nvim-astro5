@@ -30,6 +30,9 @@ return {
   -- ----------------------------------------------
   -- Editing Support
 
+  -- Rainbow parens
+  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+
   -- Multiple Cursors
   { import = "astrocommunity.editing-support.vim-visual-multi" },
 

@@ -2,6 +2,7 @@
 
 ## Changed
 - practicalli: revert to upstream other.nvim
+- community: add rainbow-delimiters with theme support
 
 # 2025-04-24
 
