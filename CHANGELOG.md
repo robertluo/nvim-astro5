@@ -4,6 +4,7 @@
 - practicalli: revert to upstream other.nvim
 - community: add rainbow-delimiters with theme support
 - community: add color picker ccc-nvim
+- community: add emoji completion blink-cmp-emoji
 
 # 2025-04-24
 
