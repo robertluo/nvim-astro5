@@ -23,8 +23,15 @@ return {
   -- ----------------------------------------------
 
   -- ----------------------------------------------
+  -- Themes and Color
+  --
   -- Colorscheme (Themes)
   { import = "astrocommunity.colorscheme.catppuccin" },
+
+  -- color picker and highlighter
+  { import = "astrocommunity.color.ccc-nvim" },
+  -- ----------------------------------------------
+
   -- ----------------------------------------------
 
   -- ----------------------------------------------
