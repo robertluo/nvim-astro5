@@ -57,7 +57,7 @@ return {
 
   -- ----------------------------------------------
   -- Motion plugins
-  -- { import = "astrocommunity.motion.nvim-surround" },
+  { import = "astrocommunity.motion.nvim-surround" },
   -- ----------------------------------------------
 
   -- ----------------------------------------------

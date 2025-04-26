@@ -1,10 +1,13 @@
 # Unreleased
 
-## Changed
-- practicalli: revert to upstream other.nvim
+## Added
 - community: add rainbow-delimiters with theme support
 - community: add color picker ccc-nvim
 - community: add emoji completion blink-cmp-emoji
+- community: add advanced surround nvim-surround
+
+## Changed
+- practicalli: revert to upstream other.nvim
 
 # 2025-04-24
 
