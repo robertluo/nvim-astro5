@@ -20,6 +20,7 @@
 # ------------------------
 # Include Lua project & config
 !after/
+!ftdetect/
 !lua/
 !snippets/
 !.neoconf.json

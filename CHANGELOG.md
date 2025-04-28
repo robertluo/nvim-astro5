@@ -6,6 +6,7 @@
 - community: add emoji completion blink-cmp-emoji
 - community: add advanced surround nvim-surround
 - community: add search & replace grug-far-nvim
+- ftdetect: set *.bb files as clojure filetype #49
 
 ## Changed
 - practicalli: revert to upstream other.nvim
