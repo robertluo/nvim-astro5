@@ -5,6 +5,7 @@
 - community: add color picker ccc-nvim
 - community: add emoji completion blink-cmp-emoji
 - community: add advanced surround nvim-surround
+- community: add search & replace grug-far-nvim
 
 ## Changed
 - practicalli: revert to upstream other.nvim

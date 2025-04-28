@@ -65,6 +65,13 @@ return {
   -- ----------------------------------------------
 
   -- ----------------------------------------------
+  -- Search
+
+  -- Search and replace across projects
+  { import = "astrocommunity.search.grug-far-nvim" },
+  -- ----------------------------------------------
+
+  -- ----------------------------------------------
   -- Recipes
 
   -- Neovide GUI configuration
