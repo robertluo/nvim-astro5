@@ -8,6 +8,7 @@
 
 ## Changed
 - practicalli: revert to upstream other.nvim
+- practicalli: remove parpar in favor of clojure pack
 
 # 2025-04-24
 
