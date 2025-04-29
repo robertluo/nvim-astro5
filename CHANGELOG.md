@@ -11,6 +11,7 @@
 ## Changed
 - practicalli: revert to upstream other.nvim
 - practicalli: remove parpar in favor of clojure pack
+- dev: ci scheduled stale issue & pr check (monthly)
 
 # 2025-04-24
 
