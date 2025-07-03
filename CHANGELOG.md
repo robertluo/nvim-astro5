@@ -12,6 +12,7 @@
 - practicalli: revert to upstream other.nvim
 - practicalli: remove parpar in favor of clojure pack
 - dev: ci scheduled stale issue & pr check (monthly)
+- practicalli: snacks notifier wrap text
 
 # 2025-04-24
 
