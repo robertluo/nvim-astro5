@@ -1,5 +1,7 @@
 # Unreleased
 
+# 2025-07-03
+
 ## Added
 - community: add rainbow-delimiters with theme support
 - community: add color picker ccc-nvim
