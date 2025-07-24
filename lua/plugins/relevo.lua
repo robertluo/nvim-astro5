@@ -15,14 +15,8 @@
 -- Neovim global options & key mappings
 -- ------------------------------------------
 
--- INFO: Create your own preferences in `lua/plugins/your-name.lua`
-
 -- INFO: Files under `lua/plugins/*.lua` load in alphabetical order,
 -- so plugin overrides should be the last file to load
-
--- INFO: Config in this file skipped if `PRACTICALLI_ASTRO` environment variable set to false
-local user_practicalli = vim.env.PRACTICALLI_ASTRO
-if user_practicalli == "false" then return {} end
 
 ---@type LazySpec
 return {
@@ -67,12 +61,12 @@ return {
         preset = {
           -- customize the dashboard header
           header = table.concat({
-            " ██████╗ ██████╗  █████╗  ██████╗████████╗██╗ ██████╗ █████╗ ██╗     ██╗     ██╗",
-            " ██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║██╔════╝██╔══██╗██║     ██║     ██║",
-            " ██████╔╝██████╔╝███████║██║        ██║   ██║██║     ███████║██║     ██║     ██║",
-            " ██╔═══╝ ██╔══██╗██╔══██║██║        ██║   ██║██║     ██╔══██║██║     ██║     ██║",
-            " ██║     ██║  ██║██║  ██║╚██████╗   ██║   ██║╚██████╗██║  ██║███████╗███████╗██║",
-            " ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝",
+            "██████╗ ███████╗██╗         ███████╗██╗   ██╗ ██████╗ ",
+            "██╔══██╗██╔════╝██║         ██╔════╝██║   ██║██╔═══██╗",
+            "██████╔╝█████╗  ██║         █████╗  ██║   ██║██║   ██║",
+            "██╔══██╗██╔══╝  ██║         ██╔══╝  ╚██╗ ██╔╝██║   ██║",
+            "██║  ██║███████╗███████╗    ███████╗ ╚████╔╝ ╚██████╔╝",
+            "╚═╝  ╚═╝╚══════╝╚══════╝    ╚══════╝  ╚═══╝   ╚═════╝",
           }, "\n"),
         },
       },
@@ -166,9 +160,6 @@ return {
           ["conjure#eval#comment_prefix"] = ";; ",
           -- Hightlight evaluated forms
           ["conjure#highlight#enabled"] = true,
-
-          -- show HUD REPL log at startup
-          ["conjure#log#hud#enabled"] = false,
 
           -- auto repl (babashka)
           ["conjure#client#clojure#nrepl#connection#auto_repl#enabled"] = false,

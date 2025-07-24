@@ -1,23 +1,17 @@
 # Practicalli Astro5 Neovim Configuration
 
 ```none
-██████╗ ██████╗  █████╗  ██████╗████████╗██╗ ██████╗ █████╗ ██╗     ██╗     ██╗
-██╔══██╗██╔══██╗██╔══██╗██╔════╝╚══██╔══╝██║██╔════╝██╔══██╗██║     ██║     ██║
-██████╔╝██████╔╝███████║██║        ██║   ██║██║     ███████║██║     ██║     ██║
-██╔═══╝ ██╔══██╗██╔══██║██║        ██║   ██║██║     ██╔══██║██║     ██║     ██║
-██║     ██║  ██║██║  ██║╚██████╗   ██║   ██║╚██████╗██║  ██║███████╗███████╗██║
-╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝   ╚═╝   ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝
 
- █████╗ ███████╗████████╗██████╗  ██████╗     ███████╗
-██╔══██╗██╔════╝╚══██╔══╝██╔══██╗██╔═══██╗    ██╔════╝
-███████║███████╗   ██║   ██████╔╝██║   ██║    ███████╗
-██╔══██║╚════██║   ██║   ██╔══██╗██║   ██║    ╚════██║
-██║  ██║███████║   ██║   ██║  ██║╚██████╔╝    ███████║
-╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝ ╚═════╝     ╚══════╝
+██████╗ ███████╗██╗         ███████╗██╗   ██╗ ██████╗
+██╔══██╗██╔════╝██║         ██╔════╝██║   ██║██╔═══██╗
+██████╔╝█████╗  ██║         █████╗  ██║   ██║██║   ██║
+██╔══██╗██╔══╝  ██║         ██╔══╝  ╚██╗ ██╔╝██║   ██║
+██║  ██║███████╗███████╗    ███████╗ ╚████╔╝ ╚██████╔╝
+╚═╝  ╚═╝╚══════╝╚══════╝    ╚══════╝  ╚═══╝   ╚═════╝
+
 ```
 
-> NOTE: Ascii Art Generator: https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Astro%205
-
+> NOTE: Ascii Art Generator: <https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=Astro%205>
 
 ## Overview
 
@@ -25,8 +19,7 @@ A lazy loading rich feature configuration for [Neovim 0.11.x](https://neovim.org
 
 This configuration is built upon [AstroNvim version 5](https://github.com/AstroNvim/AstroNvim), extending the AstroNvim v5 template with valuable plugins, options and key mappings.
 
-[Practicalli Neovim](https://practical.li/neovim/) describes the Clojure REPL workflow, rich Git and GitHub clients and easy management of plugins and tools using this configuration.
-
+[Practicalli Neovim](https://practical.li/neovim/) describes the Clojure REPL workflow, rich Git and GitHub clients and management of plugins and tools using this configuration.
 
 ## 🛠️ Installation
 
@@ -74,7 +67,6 @@ Run `astro5` and allow neovim plugins to automatically install and Treesitter la
 astro5
 ```
 
-
 ## Configuration overview
 
 The configuration is based on the AstroNvim v5 template config.  Changes to existing file have been kept to a minimum, except for `lua/community.lua` which has additional plugins from the AstroNvim Community repository.
@@ -88,11 +80,9 @@ Create your own `lua/plugins/user-yourname.lua` file to:
 - override default plugin configuration
 - add new plugins (or create a new file for a plugin to make them easier to be optional)
 
-
 [Practicalli Astro5 config design](https://practical.li/neovim/reference/astro5-configuration/) provides a complete breakdown of this configuration.
 
 > NOTE: Lua files in the `lua/plugins` directory are loaded in alphabetical order so plugin overrides should be the last file to load, e.g `lua/plugins/user-*`
-
 
 ### LSP Servers
 
@@ -103,7 +93,6 @@ Mason is used to automatically install LSP servers, format & lint tools.  [Mason
 Mason can be configured to use a locally installed Clojure LSP server (using the [instructions for your operating system](https://clojure-lsp.io/installation/)).
 
 [lua/plugins/termux.lua](https://github.com/practicalli/nvim-astro5/blob/main/lua/plugins/termux.lua) shows how to configure mason to use a local Clojure and Lua LSP server (preventing Mason from automatically installing these tools)
-
 
 ## Sponsor Practicalli
 
