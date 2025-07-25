@@ -71,8 +71,6 @@ astro5
 
 The configuration is based on the AstroNvim v5 template config.  Changes to existing file have been kept to a minimum, except for `lua/community.lua` which has additional plugins from the AstroNvim Community repository.
 
-`lua/plugins/practicalli.lua` contains Practicalli specific configuration (plugins, preferences & key maps).  This also provides an example of how to modify and extend the AstroNvim configuration yourself.
-
 Set environment variable `PRACTICALLI_ASTRO` to false to skip the Practicalli config without requiring a code change.
 
 Create your own `lua/plugins/user-yourname.lua` file to:
@@ -94,10 +92,7 @@ Mason can be configured to use a locally installed Clojure LSP server (using the
 
 [lua/plugins/termux.lua](https://github.com/practicalli/nvim-astro5/blob/main/lua/plugins/termux.lua) shows how to configure mason to use a local Clojure and Lua LSP server (preventing Mason from automatically installing these tools)
 
-## Sponsor Practicalli
+## My modification
 
-[![Sponsor Practicalli via GitHub](https://raw.githubusercontent.com/practicalli/graphic-design/live/buttons/practicalli-github-sponsors-button.png)](https://github.com/sponsors/practicalli-johnny/)
-
-All sponsorship funds are used to support the continued development of [Practicalli series of books and videos](https://practical.li/), although most work is done at personal cost and time. Infrastructure costs are kept to zero.
-
-Thanks to [Cognitect](https://www.cognitect.com/), [Nubank](https://nubank.com.br/) and a wide range of other [sponsors](https://github.com/sponsors/practicalli-johnny#sponsors) for your continued support
+- community lualine
+- community codecompanion

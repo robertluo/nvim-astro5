@@ -104,6 +104,7 @@ return {
   { import = "astrocommunity.utility.noice-nvim" },
   -- ----------------------------------------------
   { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
-  { import = "astrocommunity.bars-and-lines.feline-nvim" },
+  { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.pack.jj" },
+  { import = "astrocommunity.editing-support.codecompanion-nvim" },
 }
