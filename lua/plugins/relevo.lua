@@ -31,6 +31,10 @@ return {
       ---@type false | "classic" | "modern" | "helix"
       preset = "helix",
     },
+    require("which-key").add {
+      { "<Leader>j", group = "JJ" },
+      { "<Leader>z", group = "Color" },
+    },
   },
   -- Colorscheme (Theme)
   ---@type LazySpec
