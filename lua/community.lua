@@ -103,4 +103,7 @@ return {
   -- rich command prompt
   { import = "astrocommunity.utility.noice-nvim" },
   -- ----------------------------------------------
+  { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
+  { import = "astrocommunity.bars-and-lines.feline-nvim" },
+  { import = "astrocommunity.pack.jj" },
 }
