@@ -1,20 +1,3 @@
--- ------------------------------------------
--- Practicalli preferences
---
--- which-key menu vertical orientation
--- catppuccin-mocha colorscheme
--- Show key presses in popup (SPC u k)
--- Snacks customisation
--- -- Startup dashboard banner
--- -- indent guides disabled
--- -- notifier log level INFO
--- `fd` as alternate `ESC` key mapping (better-escape.nvim)
--- Trim blank space automatically
--- Custom snippets
--- Gist public
--- Neovim global options & key mappings
--- ------------------------------------------
-
 -- INFO: Files under `lua/plugins/*.lua` load in alphabetical order,
 -- so plugin overrides should be the last file to load
 
@@ -23,7 +6,16 @@ return {
 
   -- ------------------------------------------
   -- UI Customisation
-
+  {
+    "AstroNvim/astrolsp",
+    opts = {
+      formatting = {
+        format_on_save = {
+          ignore_filetypes = { "clojure" },
+        },
+      },
+    },
+  },
   -- Vertical which-key menu
   {
     "folke/which-key.nvim",
@@ -107,12 +99,6 @@ return {
       },
     },
   },
-  -- Trim trailing blank space and blank lines
-  {
-    "cappyzawa/trim.nvim",
-    event = "User AstroFile",
-    opts = {},
-  },
   -- Custom snippets (vscode format)
   {
     "L3MON4D3/LuaSnip",
@@ -148,10 +134,12 @@ return {
         opt = {
           spell = true, -- sets vim.opt.spell
           wrap = true, -- sets vim.opt.wrap
-          guifont = "Fira Code:h16", -- neovide font family & size
+          guifont = "Fira Code:h13", -- neovide font family & size
         },
         -- configure global vim variables: vim.g
         g = {
+          neovide_opacity = 0.8,
+          neovide_normal_opacity = 0.8,
           -- Neovim language provides - disable language integration not required
           loaded_perl_provider = 0,
           loaded_ruby_provider = 0,

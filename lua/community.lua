@@ -107,4 +107,5 @@ return {
   { import = "astrocommunity.bars-and-lines.lualine-nvim" },
   { import = "astrocommunity.pack.jj" },
   { import = "astrocommunity.completion.avante-nvim" },
+  { import = "astrocommunity.editing-support.mcphub-nvim" },
 }
